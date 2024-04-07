@@ -84,14 +84,23 @@ The final build step makes sure this repository builds with the standard go fram
 It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
 
 ### Prerequisite 5: Patch and build the custom GoAT runtime:
-```
-$> cd /usr/local/go-goat/go
-$> patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
-$> cd src/
-$> export GOROOT_BOOTSTRAP=/usr/local/go-orig
-$> ./make.bash
+```bash
+cd /usr/local/go-goat/go
+patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
+# Label the version number so we can tell whether this go executable is modified.
+sed --in-place '/-goat/ ! s/$/-goat/' VERSION
+cd src/
+export GOROOT_BOOTSTRAP=/usr/local/go-orig
+sudo apt-get update && sudo apt-get install --yes build-essential
+./make.bash
 ```
 It will take a while. Then you need to make this build as the main Go runtime:
+
+```console
+$ /usr/local/go-goat/go/bin
+go version go1.15.6-goat linux/amd64
+```
+
 ```
 $> ln -nsf /usr/local/go-goat/go /usr/local/go
 ```
