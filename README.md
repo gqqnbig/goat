@@ -57,6 +57,16 @@ In order to make sure that paths are available, execute below command first:
 ```
 $> go get github.com/staheri/goat
 ```
+
+```bash
+cd $GOPATH/src/github.com/gqqnbig/goat
+if [[ -f go.mod ]]; then
+    echo 'This repo is in module-aware mode.'
+else
+    echo 'This repo is in GOPATH mode.'
+fi
+```
+
 It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
 
 ### Prerequisite 5: Patch and build the custom GoAT runtime:
