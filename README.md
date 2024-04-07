@@ -55,7 +55,7 @@ You can change the path for `$GOATWS` as you wish. All the GoAT's output will be
 ###  Prerequisite 4: Download GoAT to the correct path
 In order to make sure that paths are available, execute below command first:
 ```
-$> go get github.com/staheri/goat
+go get github.com/gqqnbig/goat
 ```
 It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
 
