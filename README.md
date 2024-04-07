@@ -18,26 +18,18 @@ We are working on a docker version of goat to make it available for schedule tes
 
 GoAT is working in a custom runtime based on version [1.15.6](https://github.com/golang/go/tree/go1.15.6) of Golang currently only for Linux. It should be extensible to other architectures of the same version but they have not been tested.
 
-### Prerequisite 0: install Go
-Let's say your original Go installation is under `/usr/local/go` and your `$PATH` includes `/usr/local/go/bin` which means that you are able to run Go programs.
-For installing Go, please refer to [install Go](https://golang.org/doc/install) and follow its simple steps to set paths.
-​
-### Prerequisite 1: rename original Go
-Assuming your original Go installation is under `/usr/local/go`. First we rename the original go to `go-orig` and create a virutal link under the name `/usr/local/go` to easily switch between builds later.
-```
-$> sudo -i
-$> mv /usr/local/go /usr/local/go-orig
-$> ln -nsf /usr/local/go-orig /usr/local/go
-```
-​
 ### Prerequisite 2: download new Go
-Download version 1.15.6.
-​
+
+Install go 1.15.6
+```bash
+wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 ```
-$> sudo -i
-$> wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
-$> mkdir -p /usr/local/go-goat
-$> tar -xzvf go1.15.6.linux-amd64.tar.gz -C /usr/local/go-goat
+
+```bash
+mkdir -p /usr/local/go-goat
+sudo tar -C /usr/local/go-goat -xzf go1.15.6.linux-amd64.tar.gz
 ```
 
 ###  Prerequisite 3: Set environment variables
