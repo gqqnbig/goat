@@ -35,17 +35,17 @@ sudo tar -C /usr/local/go-goat -xzf go1.15.6.linux-amd64.tar.gz
 ###  Prerequisite 3: Set environment variables
 For developing in Go, you have to set your $GOPATH and $GOROOT vars. $GOROOT is where the go runtime resides and $GOPATH is where your projects are.
 ```
-$> export GOPATH=$HOME/gopath
-$> mkdir $GOPATH
-$> export GOROOT=/usr/local/go
-$> export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOPATH=$HOME/gopath
+mkdir $GOPATH
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 GoAT requires the GOATWS (workstation), GOATTO (global deadlock timeout) GOATMAXPROCS to be set as well.
 ```
-$> export GOATWS=$HOME/goatws
-$> mkdir -p $GOATWS
-$> export GOATTO=30
-$> export GOATMAXPROCS=4
+export GOATWS=$HOME/goatws
+mkdir -p $GOATWS
+export GOATTO=30
+export GOATMAXPROCS=4
 ```
 You should add above lines to your `./.bashrc` to have them set each time you log in to the server.
 `GOATMAXPROCS` is the number of CPU cores that GoAT uses for experimenting. The max number of cores that you can set is the number of your machine CPU cores.
