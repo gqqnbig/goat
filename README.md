@@ -75,7 +75,11 @@ git -C $GOPATH/src/github.com/go-sql-driver/mysql checkout v1.5.0
 git -C $GOPATH/src/golang.org/x/tools/go/ast/astutil checkout v0.1.0
 git -C $GOPATH/src/golang.org/x/tools/go/internal/cgo checkout v0.1.0
 git -C $GOPATH/src/golang.org/x/sys/execabs checkout v0.1.0
+
+go build -o $GOPATH/bin/goat
 ```
+
+The final build step makes sure this repository builds with the standard go framework.
 
 It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
 
