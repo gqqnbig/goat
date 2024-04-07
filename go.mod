@@ -1,4 +1,4 @@
-module github/mod/goat
+module github/gqqnbig/goat
 
 go 1.17
 
@@ -24,3 +24,5 @@ require (
 	go.mongodb.org/mongo-driver v1.14.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
 )
+
+replace github.com/staheri/goat => ../../gqqnbig/goat
