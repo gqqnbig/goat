@@ -58,6 +58,8 @@ In order to make sure that paths are available, execute below command first:
 $> go get github.com/staheri/goat
 ```
 
+It is ok for this command to fail as long as `$GOPATH/src/github.com/staheri/goat` is cloned.
+
 ```bash
 cd $GOPATH/src/github.com/gqqnbig/goat
 if [[ -f go.mod ]]; then
@@ -65,6 +67,14 @@ if [[ -f go.mod ]]; then
 else
     echo 'This repo is in GOPATH mode.'
 fi
+
+git -C $GOPATH/src/github.com/rivo/uniseg checkout v0.1.0
+git -C $GOPATH/src/github.com/mattn/go-runewidth checkout v0.0.9
+git -C $GOPATH/src/filippo.io/edwards25519 checkout v1.0.0-beta.2
+git -C $GOPATH/src/github.com/go-sql-driver/mysql checkout v1.5.0
+git -C $GOPATH/src/golang.org/x/tools/go/ast/astutil checkout v0.1.0
+git -C $GOPATH/src/golang.org/x/tools/go/internal/cgo checkout v0.1.0
+git -C $GOPATH/src/golang.org/x/sys/execabs checkout v0.1.0
 ```
 
 It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
