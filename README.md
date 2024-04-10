@@ -28,7 +28,7 @@ export PATH=$PATH:/usr/local/go/bin
 ```
 
 ```bash
-mkdir -p /usr/local/go-goat
+sudo mkdir -p /usr/local/go-goat
 sudo tar -C /usr/local/go-goat -xzf go1.15.6.linux-amd64.tar.gz
 ```
 
