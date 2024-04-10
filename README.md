@@ -55,7 +55,7 @@ You can change the path for `$GOATWS` as you wish. All the GoAT's output will be
 ###  Prerequisite 4: Download GoAT to the correct path
 In order to make sure that paths are available, execute below command first:
 ```
-$> go get github.com/staheri/goat
+go get github.com/gqqnbig/goat
 ```
 
 It is ok for this command to fail as long as `$GOPATH/src/github.com/staheri/goat` is cloned.
@@ -74,6 +74,8 @@ git -C $GOPATH/src/filippo.io/edwards25519 checkout v1.0.0-beta.2
 git -C $GOPATH/src/github.com/go-sql-driver/mysql checkout v1.5.0
 git -C $GOPATH/src/golang.org/x/tools/go/ast/astutil checkout v0.1.0
 git -C $GOPATH/src/golang.org/x/tools/go/internal/cgo checkout v0.1.0
+
+go get github.com/gqqnbig/goat
 git -C $GOPATH/src/golang.org/x/sys/execabs checkout v0.1.0
 
 go build -o $GOPATH/bin/goat
@@ -84,6 +86,8 @@ The final build step makes sure this repository builds with the standard go fram
 It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
 
 ### Prerequisite 5: Patch and build the custom GoAT runtime:
+
+Run the following in a root shell.
 ```bash
 cd /usr/local/go-goat/go
 patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
@@ -91,25 +95,25 @@ patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.pa
 sed --in-place '/-goat/ ! s/$/-goat/' VERSION
 cd src/
 export GOROOT_BOOTSTRAP=/usr/local/go-orig
-sudo apt-get update && sudo apt-get install --yes build-essential
+apt-get update && apt-get install --yes build-essential
 ./make.bash
 ```
 It will take a while. Then you need to make this build as the main Go runtime:
 
 ```console
-$ /usr/local/go-goat/go/bin
+$ /usr/local/go-goat/go/bin/go version
 go version go1.15.6-goat linux/amd64
 ```
 
 ```
-$> ln -nsf /usr/local/go-goat/go /usr/local/go
+sudo ln -nsf /usr/local/go-goat/ /usr/local/go
 ```
 You can always switch back to your default Go by:
 ```
 $> ln -nsf /usr/local/go-orig /usr/local/go
 ```
 
-### Make GoAT:
+### Make GoAT??:
 ```
 $> cd $GOPATH/src/github.com/staheri/goat
 $> go build -o $GOPATH/bin/goat
