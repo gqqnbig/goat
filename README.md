@@ -107,8 +107,9 @@ $ /usr/local/go-goat/go/bin/go version
 go version go1.15.6-goat linux/amd64
 ```
 
+Switch to use go-goat.
 ```
-sudo ln -nsf /usr/local/go-goat/ /usr/local/go
+sudo ln -s /usr/local/go-goat/ /usr/local/go
 ```
 You can always switch back to your default Go by:
 ```
