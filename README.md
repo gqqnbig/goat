@@ -91,13 +91,13 @@ It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github
 Run the following in a root shell.
 ```bash
 cd /usr/local/go-goat/go
-patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
+sudo patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
 # Label the version number so we can tell whether this go executable is modified.
-sed --in-place '/-goat/ ! s/$/-goat/' VERSION
-cd src/
+sudo sed --in-place '/-goat/ ! s/$/-goat/' VERSION
 export GOROOT_BOOTSTRAP=/usr/local/go-orig
-apt-get update && apt-get install --yes build-essential
-./make.bash
+sudo apt-get update && sudo apt-get install --yes build-essential
+cd src/
+sudo --preserve-env ./make.bash
 ```
 It will take a while. Then you need to make this build as the main Go runtime:
 
