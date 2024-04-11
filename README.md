@@ -79,6 +79,7 @@ go get github.com/gqqnbig/goat
 git -C $GOPATH/src/golang.org/x/sys/execabs checkout v0.1.0
 
 go build -o $GOPATH/bin/goat
+$GOPATH/bin/goat --help
 ```
 
 The final build step makes sure this repository builds with the standard go framework.
