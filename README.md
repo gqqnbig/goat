@@ -22,7 +22,7 @@ GoAT is working in a custom runtime based on version [1.15.6](https://github.com
 
 Install go 1.15.6.
 
-The original go is at `/usr/local/go-orig`. The (to-be) modified go is at `/usr/local/go-orig`. The go in using is `/usr/local/go`, which is a symbolic link.
+The original go is at `/usr/local/go-orig`. The (to-be) modified go is at `/usr/local/go-goat`. The go in using is `/usr/local/go`, which is a symbolic link.
 
 ```bash
 wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
