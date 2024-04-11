@@ -250,6 +250,13 @@ func (gex *GoatExperiment) Build(race bool) {
     return
   }
   gex.BinaryName = instrument.BuildCommand(src,dest,gex.GetMode(),"test",race) // race=false
+	fi, err := os.Stat(filepath.Join(dest, gex.BinaryName))
+	if err != nil {
+		panic("Failed to obtain file handle of " + filepath.Join(dest, gex.BinaryName))
+	}
+	if fi.Size() == 0 {
+		panic("The size of generated binary file is 0: " + filepath.Join(dest, gex.BinaryName))
+	}
 }
 
 ///////////////////////////////////////////////////////
