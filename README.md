@@ -20,16 +20,17 @@ GoAT is working in a custom runtime based on version [1.15.6](https://github.com
 
 ### Prerequisite 2: download new Go
 
-Install go 1.15.6
+Install go 1.15.6.
+
+The original go is at `/usr/local/go-orig`. The (to-be) modified go is at `/usr/local/go-orig`. The go in using is `/usr/local/go`, which is a symbolic link.
+
 ```bash
 wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+sudo cp /usr/local/go /usr/local/go-goat
+sudo mv /usr/local/go /usr/local/go-orig
+sudo ln -s /usr/local/go-orig /usr/local/go
 export PATH=$PATH:/usr/local/go/bin
-```
-
-```bash
-sudo mkdir -p /usr/local/go-goat
-sudo tar -C /usr/local/go-goat -xzf go1.15.6.linux-amd64.tar.gz
 ```
 
 ###  Prerequisite 3: Set environment variables
