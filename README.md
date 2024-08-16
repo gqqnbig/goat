@@ -118,12 +118,15 @@ You can always switch back to your default Go by:
 $> ln -nsf /usr/local/go-orig/go /usr/local/go
 ```
 
-### Make GoAT??:
+### Make GoAT:
 ```
 cd $GOPATH/src/github.com/staheri/goat
 rm $GOPATH/bin/goat
 go build -o $GOPATH/bin/goat
+goat -h
 ```
+
+At present, if you run 'goat -path=$GOPATH/src/github.com/gqqnbig/goat/CodeBenchmark/helloWorld', goat can give a verdict CRASH.
 
 ## GoAT Workflow
 To print the help message, run `goat -h`:
