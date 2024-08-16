@@ -120,8 +120,9 @@ $> ln -nsf /usr/local/go-orig/go /usr/local/go
 
 ### Make GoAT??:
 ```
-$> cd $GOPATH/src/github.com/staheri/goat
-$> go build -o $GOPATH/bin/goat
+cd $GOPATH/src/github.com/staheri/goat
+rm $GOPATH/bin/goat
+go build -o $GOPATH/bin/goat
 ```
 
 ## GoAT Workflow
