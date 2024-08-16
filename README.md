@@ -28,7 +28,7 @@ The original go is at `/usr/local/go-orig`. The (to-be) modified go is at `/usr/
 wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
 sudo mkdir go-orig 
 sudo tar -C /usr/local/go-orig -xzf go1.15.6.linux-amd64.tar.gz
-sudo cp /usr/local/go-orig /usr/local/go-goat
+sudo cp -r /usr/local/go-orig /usr/local/go-goat
 sudo ln -s /usr/local/go-orig/go /usr/local/go
 export PATH=$PATH:/usr/local/go/bin
 ```
