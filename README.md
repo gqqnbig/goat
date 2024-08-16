@@ -29,7 +29,8 @@ export PATH=$PATH:/usr/local/go/bin
 
 ```bash
 sudo mkdir -p /usr/local/go-goat
-sudo tar -C /usr/local/go-goat -xzf go1.15.6.linux-amd64.tar.gz
+tar -C ~/modified-go -xzf go1.15.6.linux-amd64.tar.gz
+sudo ln -s ~/modified-go /usr/local/go-goat/go
 ```
 
 ###  Prerequisite 3: Set environment variables
