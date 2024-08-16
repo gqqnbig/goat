@@ -95,7 +95,7 @@ cd /usr/local/go-goat/go
 sudo patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
 # Label the version number so we can tell whether this go executable is modified.
 sudo sed --in-place '/-goat/ ! s/$/-goat/' VERSION
-export GOROOT_BOOTSTRAP=/usr/local/go-orig
+export GOROOT_BOOTSTRAP=/usr/local/go-orig/go
 sudo apt-get update && sudo apt-get install --yes build-essential
 cd src/
 sudo --preserve-env ./make.bash
