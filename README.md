@@ -62,6 +62,7 @@ It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github
 
 ### Prerequisite 5: Patch and build the custom GoAT runtime:
 ```
+sudo apt install build-essential
 $> cd /usr/local/go-goat/go
 $> patch -p2 -d src/  < $GOPATH/src/github.com/staheri/goat/go1.15.6_goat_june15.patch
 $> cd src/
