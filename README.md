@@ -85,7 +85,7 @@ $GOPATH/bin/goat --help
 
 The final build step makes sure this repository builds with the standard go framework.
 
-It downloads GoAT and its dependencies under the right path (`$GOPATH/src/github.com/staheri/goat`) and installs the GoAT binary under `$GOPATH/bin/goat` but it will not work since we have to re-build GoAT with the custom runtime.
+If you rush to run `goat -path=$GOPATH/src/github.com/gqqnbig/goat/CodeBenchmark/helloWorld`, it will throw exception "panic: runtime error: invalid memory address or nil pointer dereference [signal SIGSEGV: segmentation violation]".
 
 ### Prerequisite 5: Patch and build the custom GoAT runtime:
 
