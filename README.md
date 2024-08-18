@@ -128,6 +128,8 @@ goat -h
 
 At present, if you run 'goat -path=$GOPATH/src/github.com/gqqnbig/goat/CodeBenchmark/helloWorld', goat can give a verdict CRASH.
 
+Do not use tilda (~) in the `-path` option.
+
 ## GoAT Workflow
 To print the help message, run `goat -h`:
 ```
