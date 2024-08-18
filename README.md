@@ -78,16 +78,11 @@ You can always switch back to your default Go by:
 $> ln -nsf /usr/local/go-orig /usr/local/go
 ```
 
-### Make GoAT:
-```
-$> cd $GOPATH/src/github.com/staheri/goat
-$> go build -o $GOPATH/bin/goat
-```
-
 ## GoAT Workflow
 To print the help message, run `goat -h`:
-```
-$> goat -h
+```console
+$ cd $GOPATH/src/github.com/gqqnbig/goat
+$ go run . -h
 Initializing GOAT V.0.1 ...
 Usage of bin/goat-single:
   -cov
